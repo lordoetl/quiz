@@ -1,0 +1,21 @@
+#home{
+    background-image: url('../../assets/desktop.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    height:100vh;
+    width:100vw;
+
+    section{
+        background-color: rgba($color: #000000, $alpha: .5);
+        padding-Left:$md;
+        padding-right: $md;
+        height: 80%;
+        width:35%
+    }
+    .cube{
+        font-size: 8rem;
+        color: $orange;
+    }
+}
