@@ -17,5 +17,64 @@
     .cube{
         font-size: 8rem;
         color: $orange;
+       
+    }
+
+    h1{
+        text-align: center;
+        color: $off-white;
+        font-size: $lg;
+    }
+    .play-button-container{
+        width: 100%;
+    }
+    a.play-button{
+        background-color: $green;
+        border-radius: $button-radius;
+        color: #ffffff;
+        cursor: pointer;
+        padding: $normal;
+        display: block;
+        text-align: center;
+        transition-property: 0.3s linear all;
+        
+    }
+
+    a.play-button:hover{
+        background-color: darken($color: $green, $amount: 10%);
+    }
+    
+    .auth-container{
+        width:100%;
+        margin-top: 10px;
+        display:flex;
+        justify-content: space-around;
+
+    }
+
+    #login-button{
+        background-color: $red;
+    }
+    #login-button:hover{
+        background-color: darken($color: $blue, $amount: 10%);
+    }
+
+    #signup-button{
+        background-color: $blue;
+    }
+
+    #signup-button:hover{
+        background-color: darken($color: $blue, $amount: 10%)
+    }
+
+    .auth-container .auth-buttons{
+        color:#ffffff;
+        transition-property: 0.3s linear all;
+        cursor: pointer;
+        border-radius: $button-radius;
+        padding:$normal;
+        text-align: center;
+        width: 45%;
+
     }
 }

@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './node/@mdi/font/css/materialdesignicons.min.css';
+// import './node/materialize-css/dist/css/materialize.min.css';
+// import './node/materialize-css/dist/js/materialize.min.js';
 import App from './App';
 import './styles/styles.scss'
 
