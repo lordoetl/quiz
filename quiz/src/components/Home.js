@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import {Helmet} from 'react-helmet'
 import {Link} from 'react-router-dom'
 
+
 const Home = () =>
     (
         <Fragment>
@@ -12,6 +13,7 @@ const Home = () =>
                     <span className="mdi mdi-cube-outline cube"></span>
                 </div>
                 <h1>QuizApp</h1>
+              
                 <div className="play-button-container">
                     <ul>
                         <li >

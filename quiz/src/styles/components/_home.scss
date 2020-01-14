@@ -42,6 +42,7 @@
 
     a.play-button:hover{
         background-color: darken($color: $green, $amount: 10%);
+        // box-shadow: {$shadow};
     }
     
     .auth-container{
@@ -57,6 +58,7 @@
     }
     #login-button:hover{
         background-color: darken($color: $blue, $amount: 10%);
+        // box-shadow: {$shadow};
     }
 
     #signup-button{
@@ -65,6 +67,7 @@
 
     #signup-button:hover{
         background-color: darken($color: $blue, $amount: 10%)
+        // box-shadow: {$shadow};
     }
 
     .auth-container .auth-buttons{
@@ -76,5 +79,13 @@
         text-align: center;
         width: 45%;
 
+    }
+}
+
+@media (max-width: 768px){
+    #home section {
+        padding:0 $normal;
+        width: 100%;
+        height: 100%;
     }
 }
