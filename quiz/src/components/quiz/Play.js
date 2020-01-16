@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Helmet} from 'react-helmet'
+import M from 'materialize-css'
 import questions from '../../question.json'
 import isEmpty from '../../utils/is-empty'
 
@@ -51,6 +52,46 @@ class Play extends Component{
                 answer
             })
         }
+    };
+
+    handleOptionClick=(e)=>{
+        if (e.target.innerHTML.toLowerCase() ===this.state.answer.toLowerCase()){
+            this.correctAnswer();
+        } else {
+            this.wrongAnswer();
+        }
+    };
+
+    correctAnswer=()=>{
+        M.toast({
+            html: 'Correct Answer',
+            classes: 'toast-valid',
+            displayLength:1500
+        });
+        this.setState(prevState=>({
+            score: prevState.score+1,
+            correctAnswers:prevState.correctAnswers+1,
+            currentQuestionIndex: prevState.currentQuestionIndex+1,
+            numberOfAnsweredQuestions:prevState.numberOfAnsweredQuestions+1
+        }), () =>{
+            this.displayQuestions(this.state.questions,this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
+        })
+    }
+
+    wrongAnswer=()=>{
+        navigator.vibrate(1000);
+        M.toast({
+            html: 'Wrong Answer',
+            classes: 'toast-invalid',
+            displayLength:1500
+        });
+        this.setState(prevState=>({
+            wrongAnswers:prevState.wrongAnswers+1,
+            currentQuestionIndex: prevState.currentQuestionIndex+1,
+            numberOfAnsweredQuestions:prevState.numberOfAnsweredQuestions+1
+        }),()=>{
+            this.displayQuestions(this.state.questions,this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion)
+        })
     }
     
 
