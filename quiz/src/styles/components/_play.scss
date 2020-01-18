@@ -15,6 +15,16 @@
         top:-3px;
     }
 
+    .lifeline-icon{
+        color:$green;
+        cursor: pointer;
+    }
+
+    .lifeline-icon:hover{
+        background-color: none;
+        color:$orange;
+    }
+
     h2{
         text-align: center;
     }

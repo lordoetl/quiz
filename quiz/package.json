@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "class": "^0.1.4",
+    "classnames": "^2.2.6",
     "materialize-css": "^1.0.0",
     "names": "^1.0.0",
     "node-sass": "^4.13.0",
