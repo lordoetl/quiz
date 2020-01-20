@@ -1,21 +1,34 @@
 [
     {
-        "question": "What temperature does water boil at?",
-        "optionA": "50 degrees Celcius",
-        "optionB": "25 degrees Celcius",
-        "optionC": "100 degrees Celcius",
-        "optionD": "150 degrees Celcius",
-        "answer": "100 degrees Celcius",
-        "explanation": "Farhrenheit would be 212 degrees"
+        "question": "What dependencies are used for calling and viewing API data?",
+        "optionA": "Pandas and JSON",
+        "optionB": "Numpy and Pandas",
+        "optionC": "requests and JSON",
+        "optionD": "requests and Pandas",
+        "answer": "requests and JSON",
+        "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
     },
 
     {
-        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
-        "optionA": "Wole Soyinka",
-        "optionB": "William Shakespeare",
-        "optionC": "Ngozi Chimamanda Adichie",
-        "optionD": "Dan Brown",
-        "answer": "William Shakespeare",
-        "explanation": "The Dude"
+        "question": "Given the following: data={'birth_year':'1990','name':'Bob'} How would you retrieve the value of 'name'?",
+    
+        "optionA": "name=",
+        "optionB": "data.name",
+        "optionC": "name['data']",
+        "optionD": "data['name']",
+        "answer": "data['name']",
+        "explanation": "data['name'] will call the variable and the 'name' property"
+    },
+
+    {
+        "question": "It is safe to assign an API key to a variable in your jupyter notebook.",
+    
+        "optionA": "True",
+        "optionB": "False",
+        "optionC": "Do Not Select",
+        "optionD": "Do Not Select",        
+
+        "answer": "False",
+        "explanation": "Particularly if you intend to upload the notebook to Git.  Best to store your key in a seperate file."
     }
 ]
