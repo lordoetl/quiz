@@ -5,81 +5,69 @@
     margin: $lg auto 0 auto;
     padding: $sm $md;
 
-    .lifeline-container{
+    h2 {
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    .lifeline-container {
         display: flex;
         justify-content: space-between;
     }
 
-    .lifeline{
+    .lifeline {
         position: relative;
-        top:-3px;
+        top: -3px;
     }
 
-    .lifeline-icon{
-        color:$green;
+    .lifeline-icon {
+        color: $green;
         cursor: pointer;
     }
 
-    .lifeline-icon:hover{
-        background-color: none;
-        color:$orange;
+    .lifeline-icon:hover {
+        background: none;
+        color: darken($orange, 10%);
     }
 
-    h2{
-        text-align: center;
-    }
-    .left{
-        display:flex;
-        justify-content: left;
-        text-align: left;
-    }
-
-    .right{
-        display:flex;
-        justify-content: right;
-        text-align: right;
-    }
-    h5{
+    h5 {
         font-size: 1.2rem;
-        margin-bottom: $lg;
+        margin-bottom: lg;
         line-height: 1.5;
         text-align: center;
     }
 
-    .options-container{
+    .options-container {
         display: inline-block;
         width: 50%;
     }
 
-    .option{
+    .option {
         background-color: $blue;
         border-radius: $button-radius;
         color: $white;
         cursor: pointer;
         margin: $md auto;
-        padding:$normal;
+        padding: $normal;
         transition: 0.3s linear all;
         text-align: center;
         width: 90%;
     }
 
-    .option:hover{
-        background-color: darken($blue,20%);
+    .option:hover {
+        background-color: darken($blue, 20%);
     }
-    
-    
 }
 
-.button-container{
-    display:flex;
+.button-container {
+    display: flex;
     justify-content: flex-start;
     margin: 0 auto $sm auto;
     padding: $md;
     width: 80%;
-
 }
 
-.button-container button{
+.button-container button {
     border: none;
     color: $off-white;
     cursor: pointer;
@@ -88,51 +76,32 @@
     padding: $xs $sm;
 }
 
-.button-container button:first-child{
-    background-color: darken($blue,10%);
+.button-container button:first-child {
+    background-color: darken($blue, 10%);
     box-shadow: $shadow;
-    transition: 0.2s linear all;
-
+    transition: 0.2s linear all
 }
 
-.button-container button:first-child:hover{
-    background-color: darken($blue,20%);
-}
-.button-container button{
-    border: none;
-    color: $off-white;
-    cursor: pointer;
-    font-family: $quicksand;
-    margin-right: $md;
-    padding: $xs $sm;
+.button-container button:first-child:hover {
+    background-color: darken($blue, 20%);
 }
 
-.button-container button:nth-child(2){
-    background-color: darken($green,10%);
+.button-container button:nth-child(2) {
+    background-color: $green;
     box-shadow: $shadow;
-    transition: 0.2s linear all;
-
+    transition: 0.2s linear all
 }
 
-.button-container button:nth-child(2):hover{
-    background-color: darken($green,20%);
-}
-.button-container button{
-    border: none;
-    color: $off-white;
-    cursor: pointer;
-    font-family: $quicksand;
-    margin-right: $md;
-    padding: $xs $sm;
+.button-container button:nth-child(2):hover {
+    background-color: darken($green, 10%);
 }
 
-.button-container button:last-child{
-    background-color: darken($red,10%);
+.button-container button:last-child {
+    background-color: $red;
     box-shadow: $shadow;
-    transition: 0.2s linear all;
-
+    transition: 0.2s linear all
 }
 
-.button-container button:last-child:hover{
-    background-color: darken($red,20%);
+.button-container button:last-child:hover {
+    background-color: darken($red, 10%);
 }
