@@ -5,6 +5,13 @@
     margin: $lg auto 0 auto;
     padding: $sm $md;
 
+    .explanation {
+        background-color: $off-white;
+        border-left: 5px solid $green;
+        width: 80%;
+        margin: $lg auto 0 auto;
+        padding: $sm $md;
+    }
     h2 {
         text-align: center;
         font-weight: lighter;
@@ -56,6 +63,18 @@
 
     .option:hover {
         background-color: darken($blue, 20%);
+    }
+
+    .right-answer{
+        background-color: $green;
+        border-radius: $button-radius;
+        color: $white;
+        cursor: pointer;
+        margin: $md auto;
+        padding: $normal;
+        transition: 0.3s linear all;
+        text-align: center;
+        width: 90%;
     }
 }
 
