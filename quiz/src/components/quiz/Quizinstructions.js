@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
+import {withAuthenticator} from 'aws-amplify-react';
 
 import answer from '../../assets/answer.png'
 import fiftyFifty from '../../assets/fiftyFifty.PNG'
@@ -62,4 +63,5 @@ const QuizInstructions=()=>(
     </Fragment>
 );
 
-export default QuizInstructions;
+// export default QuizInstructions;
+export default withAuthenticator(QuizInstructions, {includeGreetings: true});

@@ -5,6 +5,9 @@ import QuizInstructions from './components/quiz/Quizinstructions'
 import Play from './components/quiz/Play'
 import QuizSummary from './components/quiz/QuizSummary'
 import QuizReview from './components/quiz/quizReview'
+import Amplify from 'aws-amplify';
+import config from './aws-exports'
+import {withAuthenticator} from 'aws-amplify-react';
 
 
 function App() {
@@ -19,4 +22,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default withAuthenticator(App, {includeGreetings: true});

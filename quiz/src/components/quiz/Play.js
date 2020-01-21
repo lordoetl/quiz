@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import M from 'materialize-css';
 import classnames from 'classnames';
+import {withAuthenticator} from 'aws-amplify-react';
 
 import questions from '../../question.json';
 import isEmpty from '../../utils/is-empty';
@@ -414,5 +415,5 @@ class Play extends Component {
     }
 }
 
-export default Play;
-
+// export default Play;
+export default withAuthenticator(Play, {includeGreetings: true});

@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import questions from '../../question.json';
 import isEmpty from '../../utils/is-empty';
+import {withAuthenticator} from 'aws-amplify-react';
 
 // import correctNotification from '../../assets/audio/correct-answer.mp3';
 // import wrongNotification from '../../assets/audio/wrong-answer.mp3';
