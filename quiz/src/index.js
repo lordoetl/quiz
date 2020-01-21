@@ -5,6 +5,9 @@ import './node/@mdi/font/css/materialdesignicons.min.css';
 // import './node/materialize-css/dist/js/materialize.min.js';
 import App from './App';
 import './styles/styles.scss'
+import Amplify from 'aws-amplify';
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
