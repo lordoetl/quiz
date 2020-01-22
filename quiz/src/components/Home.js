@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import {Helmet} from 'react-helmet'
 import {Link} from 'react-router-dom'
 
+import {withAuthenticator} from 'aws-amplify-react';
+
 
 const Home = () =>
     (
@@ -33,4 +35,5 @@ const Home = () =>
     )
 ;
 
-export default Home;
+// export default Home;
+export default withAuthenticator(Home);
