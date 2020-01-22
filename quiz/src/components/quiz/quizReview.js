@@ -420,5 +420,5 @@ class quizReview extends Component {
     }
 }
 
-export default quizReview;
 
+export default withAuthenticator(quizReview, {includeGreetings: true});

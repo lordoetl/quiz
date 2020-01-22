@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"quiz55902322": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
