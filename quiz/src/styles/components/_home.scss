@@ -32,8 +32,24 @@
         width: 100%;
     }
 
-    a.play-button {
+    a.quiz-button {
         background-color: $green;
+        border-radius: $button-radius;
+        color: #fff;
+        display: block;
+        cursor: pointer;
+        padding: $normal;
+        text-align: center;
+        transition: 0.3s linear all;
+    }
+
+    a.quiz-button:hover {
+        background-color: darken($green, 10%);
+        box-shadow: $shadow;
+    }
+
+    a.play-button {
+        background-color: $blue;
         border-radius: $button-radius;
         color: #fff;
         display: block;
@@ -47,6 +63,7 @@
         background-color: darken($green, 10%);
         box-shadow: $shadow;
     }
+
 
     .auth-container {
         width: 100%;

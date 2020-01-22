@@ -64,4 +64,4 @@ const QuizInstructions=()=>(
 );
 
 // export default QuizInstructions;
-export default withAuthenticator(QuizInstructions, {includeGreetings: true});
+export default withAuthenticator(QuizInstructions);

@@ -120,4 +120,4 @@ class QuizSummary extends Component {
 }
 
 // export default QuizSummary;
-export default withAuthenticator(QuizSummary, {includeGreetings: true});
+export default withAuthenticator(QuizSummary);

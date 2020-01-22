@@ -17,16 +17,15 @@ const Home = () =>
                 <div className="play-button-container">
                     <ul>
                         <li >
-                            <Link className='play-button' to="/play/instructions">Play</Link>
+                            <Link className='play-button' to="/play/instructions">Instructions</Link></li>
+                            <br></br>
+                        <li>    <Link className='quiz-button' to="/play/Quiz">Python API Quiz</Link>
                         </li>
                     </ul>
                 </div>
-                <div className="auth-container">
-                    <Link to="/login" className="auth-buttons" id="login-button"> Login</Link>
-                    <Link to="/register" className="auth-buttons" id="signup-button"> Register</Link>
-                </div>
+1
             </section>
-           1
+           
             </div>
         </Fragment>
 

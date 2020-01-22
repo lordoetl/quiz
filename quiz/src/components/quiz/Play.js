@@ -416,4 +416,4 @@ class Play extends Component {
 }
 
 // export default Play;
-export default withAuthenticator(Play, {includeGreetings: true});
+export default withAuthenticator(Play);
