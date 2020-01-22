@@ -1,0 +1,19 @@
+type Question @model {
+  id: ID!
+  question: String!
+  optionA: String!
+  optionB: String!
+  optionC: String!
+  optionD: String!
+  answer: String!
+  explanation: String
+
+}
+
+type studentresponse @model {
+  id: ID!
+  question: String!
+  submitted_answer: String!
+  right_wrong: String!
+  date: String!
+}
