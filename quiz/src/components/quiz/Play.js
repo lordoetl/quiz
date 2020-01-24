@@ -12,10 +12,19 @@ import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonSound from '../../assets/audio/button-sound.mp3';
 
 class Play extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            questions,
+    state={
+        questions: [
+            {
+                "question": "What dependencies are used for calling and viewing API data?",
+                "optionA": "Pandas and JSON",
+                "optionB": "Numpy and Pandas",
+                "optionC": "requests and JSON",
+                "optionD": "requests and Pandas",
+                "answer": "requests and JSON",
+                "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
+            }
+        ],
+        
             currentQuestion: {},
             nextQuestion: {},
             previousQuestion: {},
@@ -32,12 +41,34 @@ class Play extends Component {
             nextButtonDisabled: false,
             previousButtonDisabled: true,
             previousRandomNumbers: [],
-            time: {}
-        };
-        this.interval = null;
-        this.correctSound = React.createRef();
-        this.wrongSound = React.createRef();
-        this.buttonSound = React.createRef();
+            time: {},
+    
+    // constructor (props) {
+    //     super(props);
+    //     this.state = {
+    //         questions,
+    //         currentQuestion: {},
+    //         nextQuestion: {},
+    //         previousQuestion: {},
+    //         answer: '',
+    //         numberOfQuestions: 0,
+    //         numberOfAnsweredQuestions: 0,
+    //         currentQuestionIndex: 0,
+    //         score: 0,
+    //         correctAnswers: 0,
+    //         wrongAnswers: 0,
+    //         hints: 5,
+    //         fiftyFifty: 2,
+    //         usedFiftyFifty: false,
+    //         nextButtonDisabled: false,
+    //         previousButtonDisabled: true,
+    //         previousRandomNumbers: [],
+    //         time: {}
+    //     };
+        interval: null,
+        correctSound: React.createRef(),
+        wrongSound: React.createRef(),
+        buttonSound: React.createRef()
     }
 
     componentDidMount () {
