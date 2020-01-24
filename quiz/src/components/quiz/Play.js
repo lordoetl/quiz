@@ -22,6 +22,29 @@ class Play extends Component {
                 "optionD": "requests and Pandas",
                 "answer": "requests and JSON",
                 "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
+            },
+
+            {
+                "question": "Given the following: data={'birth_year':'1990','name':'Bob'} How would you retrieve the value of 'name'?",
+            
+                "optionA": "name=",
+                "optionB": "data.name",
+                "optionC": "name['data']",
+                "optionD": "data['name']",
+                "answer": "data['name']",
+                "explanation": "data['name'] will call the variable and the 'name' property"
+            },
+        
+            {
+                "question": "It is safe to assign an API key to a variable in your jupyter notebook.",
+            
+                "optionA": "True",
+                "optionB": "False",
+                "optionC": "Do Not Select",
+                "optionD": "Do Not Select",        
+        
+                "answer": "False",
+                "explanation": "Particularly if you intend to upload the notebook to Git.  Best to store your key in a seperate file."
             }
         ],
         
@@ -106,19 +129,19 @@ class Play extends Component {
     handleOptionClick = (e) => {
         if (e.target.innerHTML.toLowerCase() === this.state.answer.toLowerCase()) {
             this.correctTimeout = setTimeout(() => {
-                this.correctSound.current.play();
+                // this.correctSound.play();
             }, 500);
             this.correctAnswer();
         } else {
             this.wrongTimeout = setTimeout(() => {
-                this.wrongSound.current.play();
+                ;
             }, 500);
             this.wrongAnswer();
         }
     }
 
     handleNextButtonClick = () => {
-        this.playButtonSound();
+        // this.playButtonSound();
         if (this.state.nextQuestion !== undefined) {
             this.setState(prevState => ({
                 currentQuestionIndex: prevState.currentQuestionIndex + 1
@@ -129,7 +152,7 @@ class Play extends Component {
     };
 
     handlePreviousButtonClick = () => {
-        this.playButtonSound();
+        // this.playButtonSound();
         if (this.state.previousQuestion !== undefined) {
             this.setState(prevState => ({
                 currentQuestionIndex: prevState.currentQuestionIndex - 1
@@ -140,7 +163,7 @@ class Play extends Component {
     };
 
     handleQuitButtonClick = () => {
-        this.playButtonSound();
+        // this.playButtonSound();
         if (window.confirm('Are you sure you want to quit?')) {
             this.props.history.push('/');
         }
@@ -167,7 +190,8 @@ class Play extends Component {
     };
 
     playButtonSound = () => {
-        this.buttonSound.current.play();
+        // this.buttonSound.play();
+        
     };
 
     correctAnswer = () => {
