@@ -6,16 +6,18 @@ import classnames from 'classnames';
 import questions from '../../question.json';
 import isEmpty from '../../utils/is-empty';
 import {withAuthenticator} from 'aws-amplify-react';
+import { API, graphqlOperation } from 'aws-amplify';
+
+import {listQuestions} from '../../graphql/queries'
 
 // import correctNotification from '../../assets/audio/correct-answer.mp3';
 // import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 // import buttonSound from '../../assets/audio/button-sound.mp3';
 
 class quizReview extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            questions,
+ 
+        state = {
+            questions:[],
             currentQuestion: {},
             nextQuestion: {},
             previousQuestion: {},
@@ -36,9 +38,12 @@ class quizReview extends Component {
             time: {}
         };
 
-    }
+    
 
-    componentDidMount () {
+    async componentDidMount () {
+        
+        const result = await API.graphql(graphqlOperation(listQuestions))
+        this.setState({questions:result.data.listQuestions.items})
         const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
         this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);
         // this.startTimer();

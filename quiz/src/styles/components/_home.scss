@@ -27,9 +27,13 @@
         text-align: center;
         color: $off-white;
     }
+    ul{
+        list-style-type: none;
+    }
 
     .play-button-container {
         width: 100%;
+        column-count: 1;
     }
 
     a.quiz-button {
@@ -52,10 +56,19 @@
         background-color: $blue;
         border-radius: $button-radius;
         color: #fff;
-        display: block;
+        display: flex;
         cursor: pointer;
         padding: $normal;
         text-align: center;
+        height: 40px;
+        text-decoration: none;
+        font-size:20px;
+        width:33%;
+        justify-content: center;
+        flex-direction: column; 
+        
+        
+      min-width: 80px;
         transition: 0.3s linear all;
     }
 
@@ -99,6 +112,55 @@
     }
 }
 
+
+
+
+/*Button Two*/
+.button-two {
+    margin-bottom: 10px;
+    
+    border: none;
+    padding: 20px;
+    height: 10px;
+    width: 50px;
+    transition: all 0.5s;
+    background-color: none;
+    border-radius: $button-radius;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  .button-two span {
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button-two span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button-two:hover span {
+    padding-right: 25px;
+  }
+  
+  .button-two:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .button-one, .button-two, .button-three{
+    text-align: center;
+    cursor: pointer;
+    font-size:20px;
+    margin: 0 0 0 100px;
+  }  
 @media (max-width: 768px) {
     #home section {
         padding: 0 $normal;

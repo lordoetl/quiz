@@ -5,6 +5,7 @@ import QuizInstructions from './components/quiz/Quizinstructions'
 import Play from './components/quiz/Play'
 import QuizSummary from './components/quiz/QuizSummary'
 import QuizReview from './components/quiz/quizReview'
+import CreateQuestion from './components/quiz/createQuestions'
 
 import {withAuthenticator} from 'aws-amplify-react';
 
@@ -17,6 +18,7 @@ function App() {
      <Route path="/play/Quiz" component={Play}/>
      <Route path="/play/quizSummary" exact component={QuizSummary} />
      <Route path="/play/quizReview" exact component={QuizReview} />
+     <Route path="/play/createQuestions" exact component={CreateQuestion} />
     </Router>
   );
 }

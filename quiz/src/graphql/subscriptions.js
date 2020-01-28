@@ -11,6 +11,7 @@ export const onCreateQuestion = `subscription OnCreateQuestion {
     optionD
     answer
     explanation
+    topic
   }
 }
 `;
@@ -24,6 +25,7 @@ export const onUpdateQuestion = `subscription OnUpdateQuestion {
     optionD
     answer
     explanation
+    topic
   }
 }
 `;
@@ -37,6 +39,7 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
     optionD
     answer
     explanation
+    topic
   }
 }
 `;

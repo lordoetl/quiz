@@ -14,15 +14,21 @@ const Home = () =>
                 <div style={{textAlign:'center'}}>
                     <span className="mdi mdi-cube-outline cube"></span>
                 </div>
-                <h1>QuizApp</h1>
+                <h1>Quiz App</h1>
               
+                
+                <div><Link className='play-button' to="/play/instructions"><span>Instructions</span></Link></div>
                 <div className="play-button-container">
-                    <ul>
-                        <li >
-                            <Link className='play-button' to="/play/instructions">Instructions</Link></li>
-                            <br></br>
-                        <li>    <Link className='quiz-button' to="/play/Quiz">Python API Quiz</Link>
+                <br></br>
+                    <ul> 
+                        <li>
+                        <Link className='button-two' to="/play/Quiz?topic=pythonapi"><span>Python API Quiz</span></Link>
                         </li>
+                        <br></br>
+                        <li>
+                        <Link className='button-two' to="/play/Quiz?topic=test"><span>Test Quiz</span></Link>
+                        </li>
+                
                     </ul>
                 </div>
 1

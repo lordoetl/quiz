@@ -14,6 +14,7 @@ export const createQuestion = `mutation CreateQuestion(
     optionD
     answer
     explanation
+    topic
   }
 }
 `;
@@ -30,6 +31,7 @@ export const updateQuestion = `mutation UpdateQuestion(
     optionD
     answer
     explanation
+    topic
   }
 }
 `;
@@ -46,6 +48,7 @@ export const deleteQuestion = `mutation DeleteQuestion(
     optionD
     answer
     explanation
+    topic
   }
 }
 `;

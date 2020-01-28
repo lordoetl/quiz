@@ -11,6 +11,7 @@ export const getQuestion = `query GetQuestion($id: ID!) {
     optionD
     answer
     explanation
+    topic
   }
 }
 `;
@@ -29,6 +30,7 @@ export const listQuestions = `query ListQuestions(
       optionD
       answer
       explanation
+      topic
     }
     nextToken
   }

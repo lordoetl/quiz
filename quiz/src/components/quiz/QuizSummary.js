@@ -33,6 +33,9 @@ class QuizSummary extends Component {
         }
     }
 
+
+
+
     render () {
         const { state } = this.props.location;
         let stats, remark;
@@ -81,7 +84,7 @@ class QuizSummary extends Component {
                     <section>
                         <ul>
                             <li>
-                                <Link to ="/play/quiz">Play Again</Link>
+                                <Link to ="/">Play Again</Link>
                             </li>
                             <li>
                                 <Link to ="/">Back to Home</Link>

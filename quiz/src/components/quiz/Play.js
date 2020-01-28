@@ -3,49 +3,54 @@ import { Helmet } from 'react-helmet';
 import M from 'materialize-css';
 import classnames from 'classnames';
 import {withAuthenticator} from 'aws-amplify-react';
+import {listQuestions} from '../../graphql/queries';
+import queryString from 'query-string';
+import {createStudentresponse} from '../../graphql/mutations'
 
-import questions from '../../question.json';
+// import questions from '../../question.json';
+
 import isEmpty from '../../utils/is-empty';
 
 import correctNotification from '../../assets/audio/correct-answer.mp3';
 import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonSound from '../../assets/audio/button-sound.mp3';
+import { API, graphqlOperation } from 'aws-amplify';
 
 class Play extends Component {
     state={
         questions: [
-            {
-                "question": "What dependencies are used for calling and viewing API data?",
-                "optionA": "Pandas and JSON",
-                "optionB": "Numpy and Pandas",
-                "optionC": "requests and JSON",
-                "optionD": "requests and Pandas",
-                "answer": "requests and JSON",
-                "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
-            },
+            // {
+            //     "question": "What dependencies are used for calling and viewing API data?",
+            //     "optionA": "Pandas and JSON",
+            //     "optionB": "Numpy and Pandas",
+            //     "optionC": "requests and JSON",
+            //     "optionD": "requests and Pandas",
+            //     "answer": "requests and JSON",
+            //     "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
+            // },
 
-            {
-                "question": "Given the following: data={'birth_year':'1990','name':'Bob'} How would you retrieve the value of 'name'?",
+            // {
+            //     "question": "Given the following: data={'birth_year':'1990','name':'Bob'} How would you retrieve the value of 'name'?",
             
-                "optionA": "name=",
-                "optionB": "data.name",
-                "optionC": "name['data']",
-                "optionD": "data['name']",
-                "answer": "data['name']",
-                "explanation": "data['name'] will call the variable and the 'name' property"
-            },
+            //     "optionA": "name=",
+            //     "optionB": "data.name",
+            //     "optionC": "name['data']",
+            //     "optionD": "data['name']",
+            //     "answer": "data['name']",
+            //     "explanation": "data['name'] will call the variable and the 'name' property"
+            // },
         
-            {
-                "question": "It is safe to assign an API key to a variable in your jupyter notebook.",
+            // {
+            //     "question": "It is safe to assign an API key to a variable in your jupyter notebook.",
             
-                "optionA": "True",
-                "optionB": "False",
-                "optionC": "Do Not Select",
-                "optionD": "Do Not Select",        
+            //     "optionA": "True",
+            //     "optionB": "False",
+            //     "optionC": "Do Not Select",
+            //     "optionD": "Do Not Select",        
         
-                "answer": "False",
-                "explanation": "Particularly if you intend to upload the notebook to Git.  Best to store your key in a seperate file."
-            }
+            //     "answer": "False",
+            //     "explanation": "Particularly if you intend to upload the notebook to Git.  Best to store your key in a seperate file."
+            // }
         ],
         
             currentQuestion: {},
@@ -94,8 +99,23 @@ class Play extends Component {
         buttonSound: React.createRef()
     }
 
-    componentDidMount () {
+    async componentDidMount () {
+        const values = queryString.parse(this.props.location.search)
+        const result = await API.graphql(graphqlOperation(listQuestions, {
+            filter: {
+                topic: {
+                    eq: values.topic
+                }
+            }
+        }));
+      
+
+        // const result = await API.graphql(graphqlOperation(listQuestions))
+        this.setState({questions:result.data.listQuestions.items})
         const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
+        
+        console.log(values.topic) // "top"
+       
         this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);
         this.startTimer();
     }
@@ -136,6 +156,7 @@ class Play extends Component {
             this.wrongTimeout = setTimeout(() => {
                 ;
             }, 500);
+            this.handleAddResponse(e.target.innerHTML.toLowerCase());
             this.wrongAnswer();
         }
     }
@@ -200,6 +221,7 @@ class Play extends Component {
             classes: 'toast-valid',
             displayLength: 1500
         });
+        
         this.setState(prevState => ({
             score: prevState.score + 1,
             correctAnswers: prevState.correctAnswers + 1,
@@ -212,6 +234,25 @@ class Play extends Component {
                 this.displayQuestions(this.state.questions, this.state.currentQuestion, this.state.nextQuestion, this.state.previousQuestion);
             }
         });
+
+        
+    }
+
+    handleAddResponse= async (answer) => {
+        // event.preventDefault();
+        const current=this.state.currentQuestion.question
+        // console.log(answer)
+        const wrongResponse = {
+            "question":current,
+            "submitted_answer":answer,
+            "right_wrong":"wrong",
+            "date": this.state.numberOfQuestions
+          }
+         console.log(wrongResponse) 
+        await API.graphql(graphqlOperation(createStudentresponse, {
+            input:wrongResponse
+        }))
+        
     }
 
     wrongAnswer = () => {

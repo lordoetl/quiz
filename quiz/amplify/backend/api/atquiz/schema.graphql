@@ -7,6 +7,7 @@ type Question @model {
   optionD: String!
   answer: String!
   explanation: String
+  topic:String!
 
 }
 
