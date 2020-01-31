@@ -14,7 +14,7 @@ import isEmpty from '../../utils/is-empty';
 import correctNotification from '../../assets/audio/correct-answer.mp3';
 import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonSound from '../../assets/audio/button-sound.mp3';
-import { API, graphqlOperation } from 'aws-amplify';
+import { API, graphqlOperation, Auth } from 'aws-amplify';
 
 class Play extends Component {
     state={
@@ -68,6 +68,7 @@ class Play extends Component {
             usedFiftyFifty: false,
             nextButtonDisabled: false,
             previousButtonDisabled: true,
+            user:'',
             previousRandomNumbers: [],
             time: {},
     
@@ -107,8 +108,11 @@ class Play extends Component {
                     eq: values.topic
                 }
             }
+    
         }));
+
       
+
 
         // const result = await API.graphql(graphqlOperation(listQuestions))
         this.setState({questions:result.data.listQuestions.items})
@@ -241,11 +245,12 @@ class Play extends Component {
     handleAddResponse= async (answer) => {
         // event.preventDefault();
         const current=this.state.currentQuestion.question
+        
         // console.log(answer)
         const wrongResponse = {
             "question":current,
             "submitted_answer":answer,
-            "right_wrong":"wrong",
+            "right_wrong": "wrong",
             "date": this.state.numberOfQuestions
           }
          console.log(wrongResponse) 
@@ -471,7 +476,7 @@ class Play extends Component {
                     </div>
                     <div className="timer-container">
                         <p>
-                            <span className="left" style={{ float: 'left' }}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
+                            <span className="right" style={{ float: 'right' }}>{currentQuestionIndex + 1} of {numberOfQuestions}</span>
                             <span className={classnames('right valid', {
                                 'warning': time.distance <= 120000,
                                 'invalid': time.distance < 30000

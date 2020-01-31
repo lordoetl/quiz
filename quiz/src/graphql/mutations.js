@@ -62,6 +62,7 @@ export const createStudentresponse = `mutation CreateStudentresponse(
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;
@@ -75,6 +76,7 @@ export const updateStudentresponse = `mutation UpdateStudentresponse(
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;
@@ -88,6 +90,7 @@ export const deleteStudentresponse = `mutation DeleteStudentresponse(
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;

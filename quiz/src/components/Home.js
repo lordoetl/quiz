@@ -31,7 +31,7 @@ const Home = () =>
                 
                     </ul>
                 </div>
-1
+
             </section>
            
             </div>

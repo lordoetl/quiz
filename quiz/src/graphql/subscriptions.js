@@ -43,33 +43,36 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
   }
 }
 `;
-export const onCreateStudentresponse = `subscription OnCreateStudentresponse {
-  onCreateStudentresponse {
+export const onCreateStudentresponse = `subscription OnCreateStudentresponse($owner: String!) {
+  onCreateStudentresponse(owner: $owner) {
     id
     question
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;
-export const onUpdateStudentresponse = `subscription OnUpdateStudentresponse {
-  onUpdateStudentresponse {
+export const onUpdateStudentresponse = `subscription OnUpdateStudentresponse($owner: String!) {
+  onUpdateStudentresponse(owner: $owner) {
     id
     question
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;
-export const onDeleteStudentresponse = `subscription OnDeleteStudentresponse {
-  onDeleteStudentresponse {
+export const onDeleteStudentresponse = `subscription OnDeleteStudentresponse($owner: String!) {
+  onDeleteStudentresponse(owner: $owner) {
     id
     question
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;

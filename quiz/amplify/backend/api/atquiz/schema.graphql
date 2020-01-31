@@ -1,4 +1,4 @@
-type Question @model {
+type Question @model  {
   id: ID!
   question: String!
   optionA: String!
@@ -11,7 +11,7 @@ type Question @model {
 
 }
 
-type studentresponse @model {
+type studentresponse @model @auth(rules: [{allow:owner}]) {
   id: ID!
   question: String!
   submitted_answer: String!

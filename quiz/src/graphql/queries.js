@@ -43,6 +43,7 @@ export const getStudentresponse = `query GetStudentresponse($id: ID!) {
     submitted_answer
     right_wrong
     date
+    owner
   }
 }
 `;
@@ -58,6 +59,7 @@ export const listStudentresponses = `query ListStudentresponses(
       submitted_answer
       right_wrong
       date
+      owner
     }
     nextToken
   }
