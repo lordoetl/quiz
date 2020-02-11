@@ -26,7 +26,7 @@ const Home = () =>
                         </li>
                         <br></br>
                         <li>
-                        <Link className='button-two' to="/play/Quiz?topic=test"><span>Test Quiz</span></Link>
+                        <Link className='button-two' to="/play/Quiz?topic=sql1"><span>SQL Day 1 Quiz</span></Link>
                         </li>
                 
                     </ul>

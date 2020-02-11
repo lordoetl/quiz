@@ -1,34 +1,42 @@
-[
-    {
-        "question": "What dependencies are used for calling and viewing API data?",
-        "optionA": "Pandas and JSON",
-        "optionB": "Numpy and Pandas",
-        "optionC": "requests and JSON",
-        "optionD": "requests and Pandas",
-        "answer": "requests and JSON",
-        "explanation": "the requests library give us access to the 'get' method and JSON library allows us to view and parse the json return."
-    },
+{
 
-    {
-        "question": "Given the following: data={'birth_year':'1990','name':'Bob'} How would you retrieve the value of 'name'?",
+    "answer": "Object Relational Mapper",
+
+    "explanation": "An ORM is Object Relational Mapper, it used to translate commands into different 'flavors' of SQL",
+
+    "optionA": "Object Reading Module",
+    "optionB": "Open Relational Module",
+    "optionC": "Object Relational Mapper",
+    "optionD": "Orville Redenbaucher Macaron",
+    "question": "What does that acronym ORM refer to?",
+    "topic": "advsql2"
     
-        "optionA": "name=",
-        "optionB": "data.name",
-        "optionC": "name['data']",
-        "optionD": "data['name']",
-        "answer": "data['name']",
-        "explanation": "data['name'] will call the variable and the 'name' property"
-    },
+  },
+  {
 
-    {
-        "question": "It is safe to assign an API key to a variable in your jupyter notebook.",
+    "answer": "All of the above",
+
+    "explanation": "Metadata refers to 'data about data', things like, counts, datatypes, structures would fall into this.",
+
+    "optionA": "Description of your table",
+    "optionB": "Descriptions of your columns",
+    "optionC": "Data about data",
+    "optionD": "All of the above",
+    "question": "What does 'Metadata' refer to?",
+    "topic": "advsql2"
     
-        "optionA": "True",
-        "optionB": "False",
-        "optionC": "Do Not Select",
-        "optionD": "Do Not Select",        
+  },
+  {
 
-        "answer": "False",
-        "explanation": "Particularly if you intend to upload the notebook to Git.  Best to store your key in a seperate file."
-    }
-]
+    "answer": "It ensures that the developer is in their own isolated environment",
+
+    "explanation": "It ensures that the developer is in their own isolated environment, this prevents developers or programs from accidently updating data that you are using.",
+
+    "optionA": "It ensures that the developer is in their own isolated environment",
+    "optionB": "Session is the only way to update a row",
+    "optionC": "Sessions are imported to write to the database",
+    "optionD": "a Session is one class",
+    "question": "How does a 'Session' benefit the developer when updating data?",
+    "topic": "advsql2"
+    
+  }
