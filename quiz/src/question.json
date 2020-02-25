@@ -11,32 +11,4 @@
     "question": "What does that acronym ORM refer to?",
     "topic": "advsql2"
     
-  },
-  {
-
-    "answer": "All of the above",
-
-    "explanation": "Metadata refers to 'data about data', things like, counts, datatypes, structures would fall into this.",
-
-    "optionA": "Description of your table",
-    "optionB": "Descriptions of your columns",
-    "optionC": "Data about data",
-    "optionD": "All of the above",
-    "question": "What does 'Metadata' refer to?",
-    "topic": "advsql2"
-    
-  },
-  {
-
-    "answer": "It ensures that the developer is in their own isolated environment",
-
-    "explanation": "It ensures that the developer is in their own isolated environment, this prevents developers or programs from accidently updating data that you are using.",
-
-    "optionA": "It ensures that the developer is in their own isolated environment",
-    "optionB": "Session is the only way to update a row",
-    "optionC": "Sessions are imported to write to the database",
-    "optionD": "a Session is one class",
-    "question": "How does a 'Session' benefit the developer when updating data?",
-    "topic": "advsql2"
-    
   }

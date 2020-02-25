@@ -33,7 +33,7 @@ const Home = () =>
                 </div>
 
             </section>
-           
+           <Link className='button-two' to="/play/createQuestions">add questions</Link>
             </div>
         </Fragment>
 
