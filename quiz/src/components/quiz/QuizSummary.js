@@ -20,6 +20,7 @@ class QuizSummary extends Component {
 
     componentDidMount () {
         const { state } = this.props.location;
+        console.log(state)
         if (state) {
             this.setState({
                 score: (state.score / state.numberOfQuestions) * 100,
@@ -28,7 +29,8 @@ class QuizSummary extends Component {
                 correctAnswers: state.correctAnswers,
                 wrongAnswers: state.wrongAnswers,
                 hintsUsed: state.hintsUsed,
-                fiftyFiftyUsed: state.fiftyFiftyUsed
+                fiftyFiftyUsed: state.fiftyFiftyUsed,
+                topic:state.topic.topic
             });
         }
     }
@@ -40,7 +42,8 @@ class QuizSummary extends Component {
         const { state } = this.props.location;
         let stats, remark;
         const userScore = this.state.score;
-
+        // const reviewLink='/play/QuizReview?topic='{{this.state.topic}}
+        
         if (userScore <= 30 ) {
             remark = 'You need more practice!';
         } else if (userScore > 30 && userScore <= 50) {
@@ -90,7 +93,8 @@ class QuizSummary extends Component {
                                 <Link to ="/">Back to Home</Link>
                             </li>
                             <li>
-                                <Link to ="/play/QuizReview">Review Answers</Link>
+                            
+                                <Link to ={`/play/QuizReview?topic=${this.state.topic}`}>Review Answers</Link>
                             </li>
                         </ul>
                     </section>

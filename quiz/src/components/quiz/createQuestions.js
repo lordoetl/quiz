@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import M from 'materialize-css';
-import classnames from 'classnames';
+// import M from 'materialize-css';
+// import classnames from 'classnames';
 import {withAuthenticator} from 'aws-amplify-react';
 import {API, graphqlOperation} from 'aws-amplify';
-
+import { Link } from 'react-router-dom';
 import {createQuestion} from '../../graphql/mutations'
-import { Form, Button, Input, Notification, Radio, Progress, Dropdown } from "element-react";
+// import { Form, Button, Input, Notification, Radio, Progress, Dropdown,Select } from "element-react";
+import { Form,  Button,Input,  Select } from "element-react";
 import 'element-theme-default';
 
 
@@ -23,7 +24,10 @@ class createQuestions extends Component {
         optionD: "",
         answer: "",
         explanation: "",
-        topic: ""
+        topic:[],
+        selectedTags:"",
+        topics:["pythonapi","sql1","sql2","sql3","advstor1","advstor2","advstor3","Web1","Web2","Web3","Scrape1","Scrape2","Scrape3","JavaScript1","JavaScript2","JavaScript3"],
+        options: []
     }
 
     handleAddQuestion= async event =>{
@@ -36,7 +40,7 @@ class createQuestions extends Component {
             "optionD": this.state.optionD,
             "answer": this.state.answer,
             "explanation": this.state.explanation,
-            "topic": this.state.topic
+            "topic": this.state.selectedTags
           }
         await API.graphql(graphqlOperation(createQuestion, {
           input
@@ -45,6 +49,21 @@ class createQuestions extends Component {
         
     }
 
+    // handleFilterTags = query => {
+    //     const options = this.state.tags
+    //       .map(tag => ({ value: tag, label: tag }))
+    //       .filter(tag => tag.label.toLowerCase().includes(query.toLowerCase()));
+    //     this.setState({ options });
+    //   };
+
+      handleFilterTopics = query => {
+        const options = this.state.topics
+          .map(topic => ({ value: topic, label: topic }))
+          .filter(topic => topic.label.toLowerCase().includes(query.toLowerCase()));
+        this.setState({ options });
+        console.log(this.state.options)
+        console.log(this.state.selectedTags)
+      };
     render () {
         const {
             question ,
@@ -54,10 +73,13 @@ class createQuestions extends Component {
             optionD,
             answer,
             explanation,
-            topic
+            topic,
+            selectedTags
         } = this.state;
 
         return (
+            <>
+            <Helmet><title>Quiz App - Add Question</title></Helmet>
         <div className="flex-center">
         <h2 className="header">Add New Question</h2>
         
@@ -66,7 +88,8 @@ class createQuestions extends Component {
             <Form.Item label="Add Question">
               <Input
                 type="textarea"
-                icon="information"
+                              
+                // icon="information"
                 placeholder="Question"
                 value={question}
                 onChange={question => this.setState({ question })}
@@ -126,15 +149,34 @@ class createQuestions extends Component {
                 onChange={explanation => this.setState({ explanation })}
               />
             </Form.Item>
-            <Form.Item label="topic">
+            {/* <Form.Item label="topic">
               <Input
                 type="text"
                 icon="information"
-                placeholder="topic"
+                placeholder={topic}
                 value={topic}
                 onChange={topic => this.setState({ topic })}
               />
-            </Form.Item>
+            </Form.Item> */}
+            <Form.Item label="Add Tags">
+                    <Select
+                      multiple={false}
+                      filterable={true}
+                      placeholder="Topic"
+                      onFocus={selectedTags => this.setState({ selectedTags })}
+                      onChange={selectedTags => this.setState({ selectedTags })}
+                      remoteMethod={this.handleFilterTopics}
+                      remote={true}
+                    >
+                      {this.state.options.map(option => (
+                        <Select.Option
+                          key={option.value}
+                          label={option.label}
+                          value={option.value}
+                        />
+                      ))}
+                    </Select>
+                  </Form.Item>
 
             {/* <Form.Item label="Set Product Price">
               <Input
@@ -207,12 +249,22 @@ class createQuestions extends Component {
               }}
             /> */}
             <Form.Item>
+            {/* <Button
+                  type="primary"
+                //   disabled={!this.state.name}
+                  onClick={ this.handleAddQuestion}
+                >
+                  Add
+                </Button> */}
             <button onClick={this.handleAddQuestion}>click me</button>
             </Form.Item>
           </Form>
         </div>
       </div>
-  
+      
+                            <Link to ="/">Back to Home</Link>
+                       
+  </>
  
         );
     }

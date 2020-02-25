@@ -14,7 +14,7 @@ import isEmpty from '../../utils/is-empty';
 import correctNotification from '../../assets/audio/correct-answer.mp3';
 import wrongNotification from '../../assets/audio/wrong-answer.mp3';
 import buttonSound from '../../assets/audio/button-sound.mp3';
-import { API, graphqlOperation, Auth } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 
 class Play extends Component {
     state={
@@ -71,6 +71,7 @@ class Play extends Component {
             user:'',
             previousRandomNumbers: [],
             time: {},
+            topic:"",
     
     // constructor (props) {
     //     super(props);
@@ -102,6 +103,7 @@ class Play extends Component {
 
     async componentDidMount () {
         const values = queryString.parse(this.props.location.search)
+        this.setState({topic:values})
         const result = await API.graphql(graphqlOperation(listQuestions, {
             filter: {
                 topic: {
@@ -435,7 +437,9 @@ class Play extends Component {
             correctAnswers: state.correctAnswers,
             wrongAnswers: state.wrongAnswers,
             fiftyFiftyUsed: 2 - state.fiftyFifty,
-            hintsUsed: 5 - state.hints
+            hintsUsed: 5 - state.hints,
+            topic: state.topic
+
         };
         setTimeout(() => {
             this.props.history.push('/play/QuizSummary', playerStats);

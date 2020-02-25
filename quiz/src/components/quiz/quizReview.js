@@ -7,7 +7,7 @@ import questions from '../../question.json';
 import isEmpty from '../../utils/is-empty';
 import {withAuthenticator} from 'aws-amplify-react';
 import { API, graphqlOperation } from 'aws-amplify';
-
+import queryString from 'query-string';
 import {listQuestions} from '../../graphql/queries'
 
 // import correctNotification from '../../assets/audio/correct-answer.mp3';
@@ -41,11 +41,20 @@ class quizReview extends Component {
     
 
     async componentDidMount () {
-        
-        const result = await API.graphql(graphqlOperation(listQuestions))
+        const values = queryString.parse(this.props.location.search)
+        console.log(values)
+        const result = await API.graphql(graphqlOperation(listQuestions, {
+            filter: {
+                topic: {
+                    eq: values.topic
+                }
+            }
+    
+        }));
         this.setState({questions:result.data.listQuestions.items})
         const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
         this.displayQuestions(questions, currentQuestion, nextQuestion, previousQuestion);
+        console.log(result)
         // this.startTimer();
     }
 
