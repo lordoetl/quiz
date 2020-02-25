@@ -21,7 +21,7 @@ const Home = () =>
                 <div className="play-button-container">
                 <br></br>
                     <ul> 
-                        <li>
+                        {/* <li>
                         <Link className='button-two' to="/play/Quiz?topic=pythonapi"><span>Python API Quiz</span></Link>
                         </li>
                         <hr></hr>
@@ -61,7 +61,7 @@ const Home = () =>
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=Web3"><span>Web Day 3 Quiz</span></Link>
                         <hr></hr>
-                        </li>
+                        </li> */}
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=Scrape1"><span>Web Scraping and Document Databases Day 1 Quiz</span></Link>
                         </li>
@@ -69,7 +69,7 @@ const Home = () =>
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=Scrape2"><span>Web Scraping and Document Databases Day 2 Quiz</span></Link>
                         </li>
-                       
+{/*                        
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=Scrape3"><span>Web Scraping and Document Databases Day 3 Quiz</span></Link>
                         <hr></hr>
@@ -85,14 +85,14 @@ const Home = () =>
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=JavaScript3"><span>JavaScript Day 3 Quiz</span></Link>
                         <hr></hr>
-                        </li>
+                        </li> */}
                         
                 
                     </ul>
                 </div>
 
             </section>
-           <Link className='button-two' to="/play/createQuestions">add questions</Link>
+           {/* <Link className='button-two' to="/play/createQuestions">add questions</Link> */}
             </div>
         </Fragment>
 
