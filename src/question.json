@@ -1,0 +1,14 @@
+{
+
+    "answer": "Object Relational Mapper",
+
+    "explanation": "An ORM is Object Relational Mapper, it used to translate commands into different 'flavors' of SQL",
+
+    "optionA": "Object Reading Module",
+    "optionB": "Open Relational Module",
+    "optionC": "Object Relational Mapper",
+    "optionD": "Orville Redenbaucher Macaron",
+    "question": "What does that acronym ORM refer to?",
+    "topic": "advsql2"
+    
+  }
