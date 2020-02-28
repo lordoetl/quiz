@@ -54,7 +54,7 @@ const QuizInstructions=()=>(
                 <Link to="/">No Take Me back</Link>
                 </span>
                 <span className="right">
-                <Link to="/play/Quiz">Let's do this</Link>
+                <Link to="/play/createQuestions">.</Link>
 
                 </span>
             </div>
