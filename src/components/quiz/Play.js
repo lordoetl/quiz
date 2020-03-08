@@ -109,7 +109,8 @@ class Play extends Component {
                 topic: {
                     eq: values.topic
                 }
-            }
+            },
+            limit:100
     
         }));
 
