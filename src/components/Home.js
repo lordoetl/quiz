@@ -82,11 +82,23 @@ const Home = () =>
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=JavaScript2"><span>JavaScript Day 2 Quiz</span></Link>
                         </li>
-  {/*                        
+                          
                         <li>
                         <Link className='button-two' to="/play/Quiz?topic=JavaScript3"><span>JavaScript Day 3 Quiz</span></Link>
                         <hr></hr>
-                        </li> */} 
+                        </li> 
+                        <li>
+                        <Link className='button-two' to="/play/Quiz?topic=Viz1"><span>Visualisations Day 1 Quiz</span></Link>
+                        <hr></hr>
+                        </li> 
+                        {/* <li>
+                        <Link className='button-two' to="/play/Quiz?topic=Viz2"><span>Visualisations Day 2 Quiz</span></Link>
+                        <hr></hr>
+                        </li> 
+                        <li>
+                        <Link className='button-two' to="/play/Quiz?topic=Viz3"><span>Visualisations Day 3 Quiz</span></Link>
+                        <hr></hr>
+                        </li>  */}
                         
                 
                     </ul>
