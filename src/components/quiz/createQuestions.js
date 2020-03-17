@@ -26,7 +26,7 @@ class createQuestions extends Component {
         explanation: "",
         topic:[],
         selectedTags:"",
-        topics:["pythonapi","sql1","sql2","sql3","advstor1","advstor2","advstor3","Web1","Web2","Web3","Scrape1","Scrape2","Scrape3","JavaScript1","JavaScript2","JavaScript3","Viz2","Viz3"],
+        topics:["pythonapi","sql1","sql2","sql3","advstor1","advstor2","advstor3","Web1","Web2","Web3","Scrape1","Scrape2","Scrape3","JavaScript1","JavaScript2","JavaScript3","Viz1","Viz2","Viz3"],
         options: []
     }
 
