@@ -1,5 +1,5 @@
 #home {
-    background-image: url('../../assets/desktop.jpeg');
+    background-image: url('../../assets/adrien-olichon-9zhsq3o1k60-unsplash.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -7,14 +7,14 @@
     height: 100vh;
     width: 100vw;
 
-    section {
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 5px;
-        padding-left: $md;
-        padding-right: $md;
-        height: 80%;
-        width: 35%;
-    }
+    // section {
+    //     background-color: rgba(0, 0, 0, 0.7);
+    //     border-radius: 5px;
+    //     padding-left: $md;
+    //     padding-right: $md;
+    //     height: 80%;
+    //     width: 35%;
+    // }
 
     .cube {
         font-size: 8rem;
