@@ -99,7 +99,18 @@ const Home = () =>
                         <Link className='button-two' to="/play/Quiz?topic=Viz3"><span>Visualisations Day 3 Quiz</span></Link>
                         
                         </li>  
+                        <li>
+                        <Link className='button-two' to="/play/Quiz?topic=D31"><span>D3 Day 1 Quiz</span></Link>
+                      
+                        </li> 
+                       <li>
+                        <Link className='button-two' to="/play/Quiz?topic=D32"><span>D3 Day 2 Quiz</span></Link>
                         
+                        </li> 
+                          <li>
+                        <Link className='button-two' to="/play/Quiz?topic=D33"><span>D3 Day 3 Quiz</span></Link>
+                        
+                        </li>  
                 
                     </ul>
                 </div>
